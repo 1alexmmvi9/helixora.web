@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Helixora — Modernización digital y automatización para empresas modernas.">
+<title>Helixora — Modernización Digital & Automatización</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0f1f3d;
+    --navy-mid: #1a3258;
+    --blue: #2563a8;
+    --blue-light: #3b82c4;
+    --blue-soft: #dbeafe;
+    --gray-100: #f8f9fb;
+    --gray-200: #eef0f4;
+    --gray-300: #d1d5dc;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+    --white: #ffffff;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --transition: 0.22s ease;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--gray-700);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 68px;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .nav-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex; align-items: center; gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-links a.active { color: var(--navy); font-weight: 600; }
+  .lang-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 14px;
+    border: 1.5px solid var(--gray-300);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--navy);
+    cursor: pointer;
+    transition: all var(--transition);
+    letter-spacing: 0.05em;
+  }
+  .lang-btn:hover { border-color: var(--blue); color: var(--blue); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; border: none; background: none; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
+
+  /* ── HERO ── */
+  #inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 68px);
+    text-align: center;
+    padding: 80px 5% 100px;
+    background: linear-gradient(180deg, #f8f9fb 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(37,99,168,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(37,99,168,0.06) 1px, transparent 1px);
+    background-size: 52px 52px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 30%, transparent 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 16px;
+    background: var(--blue-soft);
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 2rem;
+    letter-spacing: 0.03em;
+  }
+  .hero-badge-dot { width: 6px; height: 6px; background: var(--blue); border-radius: 50%; display: inline-block; }
+  h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--navy);
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--gray-500);
+    max-width: 540px;
+    margin: 0 auto 2.5rem;
+    font-weight: 400;
+    line-height: 1.7;
+  }
+  .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    padding: 13px 26px;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex; align-items: center;
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    letter-spacing: -0.01em;
+  }
+  .btn-primary:hover { background: var(--navy-mid); box-shadow: 0 4px 16px rgba(15,31,61,0.2); transform: translateY(-1px); }
+  .btn-secondary {
+    padding: 13px 26px;
+    background: transparent;
+    color: var(--navy);
+    border: 1.5px solid var(--gray-300);
+    border-radius: var(--radius-sm);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex; align-items: center;
+    transition: all var(--transition);
+    letter-spacing: -0.01em;
+  }
+  .btn-secondary:hover { border-color: var(--navy); background: var(--gray-100); transform: translateY(-1px); }
+
+  /* ── SECTIONS ── */
+  section { padding: 96px 5%; }
+  #servicios { background: var(--gray-100); }
+  #sectores { background: var(--white); }
+  #por-que { background: var(--gray-100); }
+  #faq { background: var(--white); }
+  #contacto { background: var(--gray-100); }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.65rem;
+  }
+  h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.75rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .section-intro {
+    font-size: 1rem;
+    color: var(--gray-500);
+    max-width: 540px;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+  .section-header { margin-bottom: 3.5rem; }
+  .section-header.center { text-align: center; }
+  .section-header.center .section-intro { margin: 0 auto; }
+
+  /* ── SERVICE CARDS ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 2rem 1.75rem;
+    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  }
+  .service-card:hover {
+    border-color: rgba(37,99,168,0.25);
+    box-shadow: 0 4px 24px rgba(37,99,168,0.08);
+    transform: translateY(-2px);
+  }
+  .service-icon {
+    width: 42px; height: 42px;
+    margin-bottom: 1.25rem;
+    color: var(--blue);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .service-icon svg { width: 32px; height: 32px; }
+  .service-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  .service-card p { font-size: 0.875rem; color: var(--gray-500); line-height: 1.65; }
+
+  /* ── INDUSTRY CARDS ── */
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+  .industry-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all var(--transition);
+  }
+  .industry-card:hover {
+    border-color: rgba(37,99,168,0.25);
+    box-shadow: 0 4px 20px rgba(37,99,168,0.07);
+    transform: translateY(-2px);
+  }
+  .industry-icon {
+    width: 44px; height: 44px;
+    margin: 0 auto 1.25rem;
+    color: var(--blue);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .industry-icon svg { width: 32px; height: 32px; }
+  .industry-card h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  .industry-card p { font-size: 0.835rem; color: var(--gray-500); line-height: 1.6; }
+
+  /* ── WHY ── */
+  .why-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+  }
+  .why-item { display: flex; gap: 0.875rem; align-items: flex-start; }
+  .why-check {
+    width: 26px; height: 26px; min-width: 26px;
+    background: var(--blue-soft);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--blue);
+    margin-top: 2px;
+  }
+  .why-check svg { width: 13px; height: 13px; }
+  .why-item h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+  }
+  .why-item p { font-size: 0.835rem; color: var(--gray-500); line-height: 1.6; }
+
+  /* ── FAQ ── */
+  .faq-list { max-width: 700px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--gray-200); }
+  .faq-q {
+    width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 0;
+    background: none; border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--navy);
+    cursor: pointer;
+    text-align: left;
+    gap: 1rem;
+    transition: color var(--transition);
+  }
+  .faq-q:hover { color: var(--blue); }
+  .faq-icon {
+    width: 22px; height: 22px; min-width: 22px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gray-300);
+    display: flex; align-items: center; justify-content: center;
+    transition: all var(--transition);
+    color: var(--gray-500);
+    flex-shrink: 0;
+  }
+  .faq-item.open .faq-icon {
+    background: var(--blue); border-color: var(--blue); color: var(--white);
+    transform: rotate(45deg);
+  }
+  .faq-icon svg { width: 11px; height: 11px; }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+  }
+  .faq-item.open .faq-a { max-height: 200px; padding-bottom: 1.2rem; }
+  .faq-a p { font-size: 0.875rem; color: var(--gray-500); line-height: 1.7; }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1.4fr;
+    gap: 4rem; align-items: start;
+    max-width: 1000px; margin: 0 auto;
+  }
+  .contact-info .section-intro { margin-bottom: 2rem; }
+  .contact-detail {
+    display: flex; align-items: center; gap: 0.875rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: color var(--transition);
+    font-weight: 400;
+  }
+  .contact-detail:hover { color: var(--blue); }
+  .contact-detail .ci {
+    width: 34px; height: 34px;
+    background: var(--blue-soft);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--blue);
+    flex-shrink: 0;
+  }
+  .contact-detail .ci svg { width: 15px; height: 15px; }
+
+  .contact-form { display: flex; flex-direction: column; gap: 0.85rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+  .form-field { display: flex; flex-direction: column; gap: 0.35rem; }
+  .form-field label { font-size: 0.75rem; font-weight: 600; color: var(--gray-700); letter-spacing: 0.01em; }
+  .form-field input,
+  .form-field textarea {
+    padding: 10px 13px;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-sm);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    color: var(--navy);
+    background: var(--white);
+    outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    resize: vertical;
+  }
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(37,99,168,0.09);
+  }
+  .form-field textarea { min-height: 115px; }
+  .form-submit {
+    padding: 13px;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+    margin-top: 0.25rem;
+    letter-spacing: -0.01em;
+  }
+  .form-submit:hover { background: var(--navy-mid); box-shadow: 0 4px 16px rgba(15,31,61,0.2); transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--white);
+    border-top: 1px solid var(--gray-200);
+    padding: 2.5rem 5%;
+    text-align: center;
+  }
+  .footer-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.02em;
+  }
+  footer p { font-size: 0.83rem; color: var(--gray-500); margin-bottom: 0.25rem; }
+  footer small { font-size: 0.75rem; color: var(--gray-300); }
+
+  /* ── FADE IN ── */
+  .fade-in {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .industries-grid { grid-template-columns: 1fr 1fr; }
+    .why-wrapper { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .industries-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--white); padding: 1.5rem 5%; border-bottom: 1px solid var(--gray-200); gap: 1.25rem; z-index: 99; }
+    .nav-links.open { display: flex; }
+    .hamburger { display: flex; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#inicio" class="nav-logo">Helixora</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#servicios" class="i18n" data-es="Servicios" data-en="Services">Servicios</a></li>
+    <li><a href="#sectores" class="i18n" data-es="Sectores" data-en="Industries">Sectores</a></li>
+    <li><a href="#por-que" class="i18n" data-es="Por qué Helixora" data-en="Why Helixora">Por qué Helixora</a></li>
+    <li><a href="#faq" data-es="FAQ" data-en="FAQ">FAQ</a></li>
+    <li><a href="#contacto" class="i18n" data-es="Contacto" data-en="Contact">Contacto</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <button class="lang-btn" id="langToggle">EN</button>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="inicio">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span class="i18n" data-es="Modernización Digital & Automatización" data-en="Digital Modernization & Automation">Modernización Digital & Automatización</span>
+    </div>
+    <h1 class="i18n" data-es="Modernización digital y automatización para empresas modernas." data-en="Digital modernization & automation for modern businesses.">Modernización digital y automatización para empresas modernas.</h1>
+    <p class="hero-sub i18n" data-es="Ayudamos a las empresas a mejorar sus flujos de trabajo digitales, modernizar sistemas y automatizar operaciones." data-en="We help businesses improve digital workflows, modernize systems and automate operations.">Ayudamos a las empresas a mejorar sus flujos de trabajo digitales, modernizar sistemas y automatizar operaciones.</p>
+    <div class="btn-group">
+      <a href="#contacto" class="btn-primary i18n" data-es="Reservar consulta" data-en="Book a Consultation">Reservar consulta</a>
+      <a href="#servicios" class="btn-secondary i18n" data-es="Saber más" data-en="Learn more">Saber más</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicios">
+  <div class="section-header center fade-in">
+    <div class="section-label i18n" data-es="Servicios" data-en="Services">Servicios</div>
+    <h2 class="i18n" data-es="Qué hacemos" data-en="What we do">Qué hacemos</h2>
+    <p class="section-intro i18n" data-es="Soluciones digitales prácticas adaptadas a las necesidades de tu empresa." data-en="Practical digital solutions tailored to your business needs.">Soluciones digitales prácticas adaptadas a las necesidades de tu empresa.</p>
+  </div>
+  <div class="services-grid fade-in">
+
+    <div class="service-card">
+      <div class="service-icon">
+        <!-- Globe / Web -->
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="16" cy="16" r="13"/>
+          <ellipse cx="16" cy="16" rx="5.5" ry="13"/>
+          <line x1="3" y1="16" x2="29" y2="16"/>
+          <line x1="5" y1="10" x2="27" y2="10"/>
+          <line x1="5" y1="22" x2="27" y2="22"/>
+        </svg>
+      </div>
+      <h3 class="i18n" data-es="Modernización Web" data-en="Website Modernization">Modernización Web</h3>
+      <p class="i18n" data-es="Sitios web empresariales modernos, rápidos y adaptados a móvil." data-en="Modern, fast and mobile-friendly business websites.">Sitios web empresariales modernos, rápidos y adaptados a móvil.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <!-- Gear / Automation -->
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="16" cy="16" r="4"/>
+          <path d="M16 3v3M16 26v3M3 16h3M26 16h3M6.34 6.34l2.12 2.12M23.54 23.54l2.12 2.12M6.34 25.66l2.12-2.12M23.54 8.46l2.12-2.12"/>
+          <path d="M21 16a5 5 0 1 1-10 0 5 5 0 0 1 10 0z" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <h3 class="i18n" data-es="Automatización de Procesos" data-en="Workflow Automation">Automatización de Procesos</h3>
+      <p class="i18n" data-es="Automatizamos tareas repetitivas y mejoramos la eficiencia operativa." data-en="Automating repetitive tasks and improving operational efficiency.">Automatizamos tareas repetitivas y mejoramos la eficiencia operativa.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <!-- Server stack -->
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="5" width="24" height="7" rx="2"/>
+          <rect x="4" y="15" width="24" height="7" rx="2"/>
+          <circle cx="8.5" cy="8.5" r="1.2" fill="currentColor" stroke="none"/>
+          <circle cx="8.5" cy="18.5" r="1.2" fill="currentColor" stroke="none"/>
+          <line x1="13" y1="8.5" x2="22" y2="8.5"/>
+          <line x1="13" y1="18.5" x2="22" y2="18.5"/>
+        </svg>
+      </div>
+      <h3 class="i18n" data-es="Infraestructura Digital" data-en="Digital Infrastructure">Infraestructura Digital</h3>
+      <p class="i18n" data-es="Sistemas empresariales, integraciones y herramientas operativas." data-en="Business systems, integrations and operational tools.">Sistemas empresariales, integraciones y herramientas operativas.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <!-- Calendar check -->
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="6" width="24" height="22" rx="2"/>
+          <line x1="4" y1="13" x2="28" y2="13"/>
+          <line x1="11" y1="3" x2="11" y2="9"/>
+          <line x1="21" y1="3" x2="21" y2="9"/>
+          <polyline points="11,19 14,22 21,16"/>
+        </svg>
+      </div>
+      <h3 class="i18n" data-es="Citas y Comunicación" data-en="Appointment & Communication">Citas y Comunicación</h3>
+      <p class="i18n" data-es="Ayudamos a las empresas a mejorar la interacción y organización con clientes." data-en="Helping businesses improve client interaction and organization.">Ayudamos a las empresas a mejorar la interacción y organización con clientes.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <!-- Lightbulb / AI -->
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 4a9 9 0 0 1 6 15.6V22a1 1 0 0 1-1 1H11a1 1 0 0 1-1-1v-2.4A9 9 0 0 1 16 4z"/>
+          <line x1="12" y1="26" x2="20" y2="26"/>
+          <line x1="14" y1="29" x2="18" y2="29"/>
+          <line x1="16" y1="10" x2="16" y2="17"/>
+          <line x1="13" y1="14" x2="19" y2="14"/>
+        </svg>
+      </div>
+      <h3 class="i18n" data-es="Soluciones con IA" data-en="AI-Assisted Solutions">Soluciones con IA</h3>
+      <p class="i18n" data-es="Herramientas de inteligencia artificial prácticas para empresas modernas." data-en="Practical AI tools for modern companies.">Herramientas de inteligencia artificial prácticas para empresas modernas.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="sectores">
+  <div class="section-header center fade-in">
+    <div class="section-label i18n" data-es="Sectores" data-en="Industries">Sectores</div>
+    <h2 class="i18n" data-es="A quién ayudamos" data-en="Who we help">A quién ayudamos</h2>
+    <p class="section-intro i18n" data-es="Trabajamos con empresas de diferentes sectores que necesitan modernizar sus operaciones digitales." data-en="We work with businesses across industries that need to modernize their digital operations.">Trabajamos con empresas de diferentes sectores que necesitan modernizar sus operaciones digitales.</p>
+  </div>
+  <div class="industries-grid fade-in">
+
+    <div class="industry-card">
+      <div class="industry-icon">
+        <!-- Heart pulse / Healthcare -->
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 28s-12-7.5-12-15a7 7 0 0 1 12-4.9A7 7 0 0 1 28 13c0 7.5-12 15-12 15z"/>
+          <polyline points="9,15 12,12 14,18 17,10 20,15 23,15"/>
+        </svg>
+      </div>
+      <h3 class="i18n" data-es="Salud y Clínicas" data-en="Healthcare & Clinics">Salud y Clínicas</h3>
+      <p class="i18n" data-es="Herramientas digitales para gestión de pacientes, citas y cumplimiento normativo." data-en="Digital tools for patient management, appointments and compliance.">Herramientas digitales para gestión de pacientes, citas y cumplimiento normativo.</p>
+    </div>
+
+    <div class="industry-card">
+      <div class="industry-icon">
+        <!-- Truck / Logistics -->
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="9" width="18" height="13" rx="1.5"/>
+          <path d="M20 12h6l4 5v5h-4"/>
+          <circle cx="8" cy="24" r="2.5"/>
+          <circle cx="24" cy="24" r="2.5"/>
+          <line x1="10.5" y1="24" x2="21.5" y2="24"/>
+          <line x1="2" y1="14" x2="20" y2="14"/>
+        </svg>
+      </div>
+      <h3 class="i18n" data-es="Logística" data-en="Logistics">Logística</h3>
+      <p class="i18n" data-es="Sistemas operativos para seguimiento, rutas y eficiencia en la cadena de suministro." data-en="Operational systems for tracking, routing and supply chain efficiency.">Sistemas operativos para seguimiento, rutas y eficiencia en la cadena de suministro.</p>
+    </div>
+
+    <div class="industry-card">
+      <div class="industry-icon">
+        <!-- Building / SMB -->
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="10" width="10" height="18" rx="1"/>
+          <rect x="14" y="4" width="14" height="24" rx="1"/>
+          <line x1="4" y1="28" x2="28" y2="28"/>
+          <rect x="17" y="8" width="3" height="3" rx="0.5"/>
+          <rect x="23" y="8" width="3" height="3" rx="0.5"/>
+          <rect x="17" y="14" width="3" height="3" rx="0.5"/>
+          <rect x="23" y="14" width="3" height="3" rx="0.5"/>
+          <rect x="7" y="20" width="4" height="8" rx="0.5"/>
+        </svg>
+      </div>
+      <h3 class="i18n" data-es="Pequeñas y Medianas Empresas" data-en="Small & Medium Businesses">Pequeñas y Medianas Empresas</h3>
+      <p class="i18n" data-es="Modernización asequible para empresas en crecimiento." data-en="Affordable modernization for growing businesses.">Modernización asequible para empresas en crecimiento.</p>
+    </div>
+
+    <div class="industry-card">
+      <div class="industry-icon">
+        <!-- Briefcase / Professional -->
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="10" width="26" height="18" rx="2"/>
+          <path d="M11 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/>
+          <line x1="3" y1="19" x2="29" y2="19"/>
+          <line x1="16" y1="15" x2="16" y2="23"/>
+        </svg>
+      </div>
+      <h3 class="i18n" data-es="Servicios Profesionales" data-en="Professional Services">Servicios Profesionales</h3>
+      <p class="i18n" data-es="Flujos de trabajo optimizados para consultoría, legal y finanzas." data-en="Optimized workflows for consulting, legal and finance.">Flujos de trabajo optimizados para consultoría, legal y finanzas.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="por-que">
+  <div class="why-wrapper">
+    <div class="fade-in">
+      <div class="section-label i18n" data-es="Por qué Helixora" data-en="Why Helixora">Por qué Helixora</div>
+      <h2 class="i18n" data-es="Soluciones prácticas, sin complejidad innecesaria." data-en="Practical solutions, without unnecessary complexity.">Soluciones prácticas, sin complejidad innecesaria.</h2>
+      <p class="section-intro i18n" data-es="Nos enfocamos en entregar resultados reales y mantenibles para tu empresa, no en soluciones sobreingeniería que nadie entiende." data-en="We focus on delivering real, maintainable results — not over-engineered solutions nobody understands.">Nos enfocamos en entregar resultados reales y mantenibles para tu empresa, no en soluciones sobreingeniería que nadie entiende.</p>
+    </div>
+    <div class="why-grid fade-in">
+      <div class="why-item">
+        <div class="why-check"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="3,8 6,11 13,4"/></svg></div>
+        <div>
+          <h4 class="i18n" data-es="Foco en simplicidad" data-en="Focus on simplicity">Foco en simplicidad</h4>
+          <p class="i18n" data-es="Sistemas que tu equipo puede usar y entender desde el primer día." data-en="Systems your team can use and understand from day one.">Sistemas que tu equipo puede usar y entender desde el primer día.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-check"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="3,8 6,11 13,4"/></svg></div>
+        <div>
+          <h4 class="i18n" data-es="Soporte fiable" data-en="Reliable support">Soporte fiable</h4>
+          <p class="i18n" data-es="Acompañamiento continuo para que tu operativa no se detenga." data-en="Continuous support so your operations never stop.">Acompañamiento continuo para que tu operativa no se detenga.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-check"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="3,8 6,11 13,4"/></svg></div>
+        <div>
+          <h4 class="i18n" data-es="Sistemas modernos" data-en="Modern systems">Sistemas modernos</h4>
+          <p class="i18n" data-es="Infraestructura digital actualizada y preparada para escalar." data-en="Updated digital infrastructure ready to scale.">Infraestructura digital actualizada y preparada para escalar.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-check"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="3,8 6,11 13,4"/></svg></div>
+        <div>
+          <h4 class="i18n" data-es="Mantenimiento a largo plazo" data-en="Long-term maintenance">Mantenimiento a largo plazo</h4>
+          <p class="i18n" data-es="No entregamos y desaparecemos. Somos tu socio digital." data-en="We don't deliver and disappear. We're your digital partner.">No entregamos y desaparecemos. Somos tu socio digital.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-check"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="3,8 6,11 13,4"/></svg></div>
+        <div>
+          <h4 class="i18n" data-es="Sin complejidad innecesaria" data-en="No unnecessary complexity">Sin complejidad innecesaria</h4>
+          <p class="i18n" data-es="La tecnología al servicio de tu negocio, no al revés." data-en="Technology in service of your business, not the other way around.">La tecnología al servicio de tu negocio, no al revés.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-header center fade-in">
+    <div class="section-label">FAQ</div>
+    <h2 class="i18n" data-es="Preguntas Frecuentes" data-en="Frequently Asked Questions">Preguntas Frecuentes</h2>
+  </div>
+  <div class="faq-list fade-in">
+
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="i18n" data-es="¿Qué servicios ofrece Helixora?" data-en="What services does Helixora provide?">¿Qué servicios ofrece Helixora?</span>
+        <div class="faq-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/></svg></div>
+      </button>
+      <div class="faq-a"><p class="i18n" data-es="Ofrecemos modernización web, automatización de procesos, desarrollo de infraestructura digital, sistemas de citas y soluciones empresariales con inteligencia artificial." data-en="We provide web modernization, workflow automation, digital infrastructure development, appointment systems and AI-powered business solutions.">Ofrecemos modernización web, automatización de procesos, desarrollo de infraestructura digital, sistemas de citas y soluciones empresariales con inteligencia artificial.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="i18n" data-es="¿Solo creáis páginas web?" data-en="Do you only create websites?">¿Solo creáis páginas web?</span>
+        <div class="faq-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/></svg></div>
+      </button>
+      <div class="faq-a"><p class="i18n" data-es="No. Aunque la modernización web es uno de nuestros servicios, también automatizamos procesos internos, integramos sistemas, desarrollamos herramientas operativas y aplicamos IA a flujos de trabajo empresariales." data-en="No. While web modernization is one of our services, we also automate internal processes, integrate systems, develop operational tools and apply AI to business workflows.">No. Aunque la modernización web es uno de nuestros servicios, también automatizamos procesos internos, integramos sistemas, desarrollamos herramientas operativas y aplicamos IA a flujos de trabajo empresariales.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="i18n" data-es="¿Podéis modernizar una web empresarial existente?" data-en="Can you modernize an existing business website?">¿Podéis modernizar una web empresarial existente?</span>
+        <div class="faq-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/></svg></div>
+      </button>
+      <div class="faq-a"><p class="i18n" data-es="Sí. Podemos analizar tu web actual y proponer mejoras de rendimiento, diseño, accesibilidad y funcionalidad, sin necesidad de empezar desde cero si no es necesario." data-en="Yes. We can analyze your current website and propose improvements in performance, design, accessibility and functionality — without starting from scratch if it's not necessary.">Sí. Podemos analizar tu web actual y proponer mejoras de rendimiento, diseño, accesibilidad y funcionalidad, sin necesidad de empezar desde cero si no es necesario.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="i18n" data-es="¿Ofrecéis mantenimiento mensual?" data-en="Do you offer monthly maintenance?">¿Ofrecéis mantenimiento mensual?</span>
+        <div class="faq-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/></svg></div>
+      </button>
+      <div class="faq-a"><p class="i18n" data-es="Sí. Ofrecemos planes de mantenimiento y soporte continuos para que tus sistemas estén siempre actualizados, seguros y funcionando correctamente." data-en="Yes. We offer continuous maintenance and support plans to keep your systems always updated, secure and running correctly.">Sí. Ofrecemos planes de mantenimiento y soporte continuos para que tus sistemas estén siempre actualizados, seguros y funcionando correctamente.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="i18n" data-es="¿Podéis automatizar flujos de trabajo internos?" data-en="Can you automate internal workflows?">¿Podéis automatizar flujos de trabajo internos?</span>
+        <div class="faq-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/></svg></div>
+      </button>
+      <div class="faq-a"><p class="i18n" data-es="Sí. Identificamos los procesos que más tiempo consumen y los automatizamos de forma práctica, desde gestión documental hasta comunicación interna." data-en="Yes. We identify your most time-consuming processes and automate them practically — from document management to internal communication.">Sí. Identificamos los procesos que más tiempo consumen y los automatizamos de forma práctica, desde gestión documental hasta comunicación interna.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="i18n" data-es="¿Cómo funciona el proceso de consulta?" data-en="How does the consultation process work?">¿Cómo funciona el proceso de consulta?</span>
+        <div class="faq-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/></svg></div>
+      </button>
+      <div class="faq-a"><p class="i18n" data-es="Empieza con una llamada breve sin compromiso. Analizamos tus necesidades, presentamos una propuesta clara y comenzamos solo si tiene sentido para ambas partes." data-en="It starts with a brief no-commitment call. We analyze your needs, present a clear proposal, and start only if it makes sense for both parties.">Empieza con una llamada breve sin compromiso. Analizamos tus necesidades, presentamos una propuesta clara y comenzamos solo si tiene sentido para ambas partes.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto">
+  <div class="contact-grid">
+    <div class="fade-in">
+      <div class="section-label i18n" data-es="Contacto" data-en="Contact">Contacto</div>
+      <h2 class="i18n" data-es="Contáctanos" data-en="Get in touch">Contáctanos</h2>
+      <p class="section-intro i18n" data-es="¿Listo para modernizar tu empresa? Hablemos." data-en="Ready to modernize your business? Let's talk.">¿Listo para modernizar tu empresa? Hablemos.</p>
+      <div style="margin-top:2rem;">
+        <a href="mailto:hello@helixora.com" class="contact-detail">
+          <div class="ci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          </div>
+          alex@helixora.es
+        </a>
+        <a href="tel:+34600000000" class="contact-detail">
+          <div class="ci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+          </div>
+          +34 624 802 974
+        </a>
+        <a href="https://linkedin.com/company/helixora" target="_blank" class="contact-detail">
+          <div class="ci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          linkedin.com/company/helixora
+        </a>
+      </div>
+    </div>
+    <div class="contact-form fade-in">
+      <div class="form-row">
+        <div class="form-field">
+          <label class="i18n" data-es="Nombre" data-en="Name">Nombre</label>
+          <input type="text" placeholder="Tu nombre">
+        </div>
+        <div class="form-field">
+          <label class="i18n" data-es="Correo electrónico" data-en="Email">Correo electrónico</label>
+          <input type="email" placeholder="tu@empresa.com">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label class="i18n" data-es="Teléfono" data-en="Phone">Teléfono</label>
+          <input type="tel" placeholder="+34 600 000 000">
+        </div>
+        <div class="form-field">
+          <label class="i18n" data-es="Empresa" data-en="Company">Empresa</label>
+          <input type="text" placeholder="Tu empresa">
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="i18n" data-es="Mensaje" data-en="Message">Mensaje</label>
+        <textarea id="msgArea" placeholder="Cuéntanos qué necesitas..."></textarea>
+      </div>
+      <button class="form-submit i18n" data-es="Enviar mensaje" data-en="Send message">Enviar mensaje</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Helixora</div>
+  <p class="i18n" data-es="Modernización digital y automatización" data-en="Digital modernization & automation">Modernización digital y automatización</p>
+  <small class="i18n" data-es="© 2026 Helixora. Todos los derechos reservados." data-en="© 2026 Helixora. All rights reserved.">© 2026 Helixora. Todos los derechos reservados.</small>
+</footer>
+
+<script>
+  // ── LANG TOGGLE ──
+  let lang = 'es';
+  const langBtn = document.getElementById('langToggle');
+  langBtn.addEventListener('click', () => {
+    lang = lang === 'es' ? 'en' : 'es';
+    langBtn.textContent = lang === 'es' ? 'EN' : 'ES';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.i18n').forEach(el => {
+      const val = el.dataset[lang];
+      if (!val) return;
+      if (el.tagName === 'INPUT') { el.placeholder = val; return; }
+      el.textContent = val;
+    });
+    document.getElementById('msgArea').placeholder =
+      lang === 'es' ? 'Cuéntanos qué necesitas...' : 'Tell us what you need...';
+    document.title = lang === 'es'
+      ? 'Helixora — Modernización Digital & Automatización'
+      : 'Helixora — Digital Modernization & Automation';
+  });
+
+  // ── HAMBURGER ──
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+
+  // ── FAQ ──
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // ── FADE IN ──
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  // ── ACTIVE NAV ──
+  const secs = document.querySelectorAll('section[id]');
+  const navAs = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    secs.forEach(s => { if (window.scrollY >= s.offsetTop - 90) cur = s.id; });
+    navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+  }, { passive: true });
+</script>
+</body>
+</html>
