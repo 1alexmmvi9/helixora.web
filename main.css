@@ -1,0 +1,78 @@
+# Plantilla de caso anonimizado
+
+**Esta carpeta no se publica.** Es material de trabajo. La página del caso solo se crea
+en `/casos/` cuando este documento esté relleno y tengas permiso escrito del cliente.
+
+## Reglas antes de rellenar nada
+
+1. **Permiso por escrito.** Aunque el caso vaya anonimizado, pídelo. Un correo del
+   responsable diciendo "adelante" es suficiente y te ahorra un disgusto.
+2. **La combinación identifica.** "Hospital público de 400 camas en la Comunidad
+   Valenciana que usa [sistema]" señala a un único centro. Sube el nivel de abstracción
+   hasta que describa a media docena de organizaciones, no a una.
+3. **Nada de cifras que no puedas demostrar.** Si el cliente no te ha dado el dato
+   medido, no lo pongas. "Se eliminó la introducción manual de datos" es verificable;
+   "se ahorró un 40 % del tiempo" solo lo es si alguien lo midió.
+4. **Cero capturas** de la aplicación del cliente, de mensajes reales o de registros.
+
+---
+
+## Ficha
+
+- **Título del caso:**
+- **Sector:** (por ejemplo: centro sanitario, laboratorio, proveedor de software clínico)
+- **Tamaño aproximado, solo si no identifica:**
+- **Duración del proyecto:**
+- **Modelo de contratación:** (proyecto cerrado / bolsa de horas / mantenimiento)
+- **Permiso del cliente:** □ obtenido por escrito el __/__/____
+- **Nivel de detalle autorizado:**
+
+## 1. Contexto
+
+Qué hacía la organización y en qué situación estaba antes. Dos o tres frases, sin datos
+que permitan reconocerla.
+
+>
+
+## 2. Problema
+
+Qué no funcionaba, en términos de operativa y no solo de tecnología. Qué se hacía a mano,
+qué se perdía, qué riesgo había.
+
+>
+
+## 3. Restricciones
+
+Lo que condicionó la solución: sistemas que no se podían tocar, ventanas de parada,
+versiones, plazos, disponibilidad de otro proveedor. Esta sección es la que demuestra
+criterio, no la lista de tecnologías.
+
+>
+
+## 4. Solución técnica
+
+Qué se construyó y por qué así. Tipos de mensaje, transformaciones, tratamiento de
+errores, decisiones de diseño y las alternativas que se descartaron.
+
+>
+
+## 5. Resultado
+
+Qué cambió de forma comprobable. Si tienes una cifra medida por el cliente, indícala con
+su fuente. Si no la tienes, describe el cambio cualitativo y no inventes el número.
+
+>
+
+## 6. Qué aprendí
+
+Un párrafo honesto, incluido lo que haría distinto. Es lo que más credibilidad da y lo
+que casi nadie escribe.
+
+>
+
+## 7. Cita del cliente (opcional)
+
+Solo si te la dan por escrito y autorizan su publicación con el cargo que se indique.
+
+> "…"
+> — Cargo, tipo de organización

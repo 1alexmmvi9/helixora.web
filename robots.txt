@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad | Helixora</title>
+<meta name="description" content="Cómo se tratan los datos personales enviados a través del formulario de contacto de helixora.es.">
+<link rel="canonical" href="https://helixora.es/legal/privacidad">
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="site-head">
+  <div class="wrap site-head__inner">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+        <path d="M8 3c0 6 16 8 16 13S8 23 8 29"/>
+        <path d="M24 3c0 6-16 8-16 13s16 7 16 13"/>
+        <path d="M10.5 9h11M10.5 23h11"/>
+      </svg>
+      Helixora
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menú</button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <ul>
+        <li><a href="/servicios">Servicios</a></li>
+        <li><a href="/servicios#como-trabajo">Cómo trabajo</a></li>
+        <li><a href="/sobre-mi">Sobre mí</a></li>
+        <li><a href="/recursos">Recursos</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="wrap hero">
+    <div class="doc">
+      <p class="hero__eyebrow">Legal</p>
+      <h1>Política de privacidad</h1>
+      <p class="doc__meta">Última actualización: <mark class="pending">{{PENDIENTE: fecha de publicación}}</mark></p>
+      <p class="lede">Esta política explica qué datos personales se recogen a través de helixora.es, para qué se usan, con quién se comparten y qué derechos tienes sobre ellos, conforme al Reglamento (UE) 2016/679 (RGPD) y a la Ley Orgánica 3/2018 (LOPDGDD).</p>
+    </div>
+  </section>
+
+  <section class="band band--surface">
+    <div class="wrap doc">
+
+      <h2>1. Responsable del tratamiento</h2>
+      <table>
+        <tbody>
+          <tr><th scope="row">Responsable</th><td><mark class="pending">{{PENDIENTE: nombre y apellidos o razón social}}</mark></td></tr>
+          <tr><th scope="row">NIF / CIF</th><td><mark class="pending">{{PENDIENTE: NIF o CIF}}</mark></td></tr>
+          <tr><th scope="row">Domicilio</th><td><mark class="pending">{{PENDIENTE: domicilio}}</mark></td></tr>
+          <tr><th scope="row">Contacto</th><td><a href="mailto:alex@helixora.es">alex@helixora.es</a></td></tr>
+          <tr><th scope="row">Delegado de Protección de Datos</th><td>No designado. <mark class="pending">{{PENDIENTE: confirmar; si en el futuro tratas datos de salud a gran escala, revisa esta obligación}}</mark></td></tr>
+        </tbody>
+      </table>
+
+      <h2>2. Qué datos se recogen</h2>
+      <p>Únicamente los que envías voluntariamente a través del formulario de contacto o por correo electrónico:</p>
+      <ul>
+        <li>Nombre y apellidos.</li>
+        <li>Dirección de correo electrónico.</li>
+        <li>Organización, si la indicas.</li>
+        <li>Teléfono, si lo indicas.</li>
+        <li>El contenido de tu mensaje.</li>
+      </ul>
+      <p>No se recogen datos de forma automática con fines de análisis, elaboración de perfiles o publicidad. No se utilizan cookies de terceros ni herramientas de analítica: puedes comprobarlo en la <a href="/legal/cookies">política de cookies</a>.</p>
+      <p>Este sitio no está destinado a recibir categorías especiales de datos. Te pedimos expresamente que no envíes datos de salud, datos de pacientes ni información confidencial de tu organización a través del formulario.</p>
+
+      <h2>3. Para qué se usan y con qué base jurídica</h2>
+      <table>
+        <thead>
+          <tr><th scope="col">Finalidad</th><th scope="col">Base jurídica</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Responder a tu consulta y mantener la comunicación derivada de ella.</td>
+            <td>Tu consentimiento, prestado al marcar la casilla del formulario (art. 6.1.a RGPD), y la aplicación de medidas precontractuales a petición tuya cuando la consulta se refiere a una posible contratación (art. 6.1.b RGPD).</td>
+          </tr>
+          <tr>
+            <td>Conservar la correspondencia como prueba de la relación y para atender posibles reclamaciones.</td>
+            <td>Interés legítimo del responsable en la defensa de sus derechos (art. 6.1.f RGPD).</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Tus datos no se usan para enviarte comunicaciones comerciales no solicitadas ni se ceden a terceros con fines publicitarios.</p>
+
+      <h2>4. Cuánto tiempo se conservan</h2>
+      <p>Si la consulta no da lugar a una relación profesional, los datos se conservan durante un máximo de <mark class="pending">{{PENDIENTE: plazo, por ejemplo 12 meses}}</mark> desde el último contacto, y después se suprimen.</p>
+      <p>Si da lugar a una relación contractual, se conservan mientras esta dure y, después, durante los plazos de prescripción legalmente aplicables en materia mercantil, fiscal y de responsabilidad.</p>
+
+      <h2>5. Quién más accede a tus datos</h2>
+      <p>No se ceden datos a terceros salvo obligación legal. Sí intervienen los siguientes proveedores, que actúan como encargados del tratamiento y solo tratan los datos siguiendo instrucciones del responsable:</p>
+      <table>
+        <thead>
+          <tr><th scope="col">Proveedor</th><th scope="col">Servicio</th><th scope="col">Ubicación</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Vercel Inc.</td>
+            <td>Alojamiento del sitio web.</td>
+            <td>Estados Unidos, con infraestructura en la Unión Europea. <mark class="pending">{{PENDIENTE: confirmar región de despliegue y garantías de transferencia internacional aplicables}}</mark></td>
+          </tr>
+          <tr>
+            <td>Web3Forms</td>
+            <td>Procesamiento y reenvío por correo de los mensajes del formulario.</td>
+            <td><mark class="pending">{{PENDIENTE: confirmar entidad titular, ubicación y garantías de transferencia; enlazar su acuerdo de tratamiento}}</mark></td>
+          </tr>
+          <tr>
+            <td><mark class="pending">{{PENDIENTE: proveedor de correo electrónico}}</mark></td>
+            <td>Recepción y custodia del correo de contacto.</td>
+            <td><mark class="pending">{{PENDIENTE}}</mark></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Cuando alguno de estos servicios implique una transferencia internacional de datos, esta se ampara en las garantías previstas en el capítulo V del RGPD.</p>
+
+      <h2>6. Tus derechos</h2>
+      <p>Puedes ejercer en cualquier momento los derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad, así como retirar el consentimiento prestado, sin que ello afecte a la licitud del tratamiento anterior.</p>
+      <p>Para ejercerlos, escribe a <a href="mailto:alex@helixora.es">alex@helixora.es</a> indicando el derecho que quieres ejercer. Puede solicitarse una acreditación de identidad para evitar que un tercero actúe en tu nombre.</p>
+      <p>Si consideras que el tratamiento no se ajusta a la normativa, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" rel="noopener">www.aepd.es</a>), autoridad de control competente en España.</p>
+
+      <h2>7. Seguridad</h2>
+      <p>El sitio se sirve mediante conexión cifrada (HTTPS) y el acceso a la correspondencia está protegido por credenciales de acceso individuales. <mark class="pending">{{PENDIENTE: describir aquí únicamente las medidas que realmente aplicas — no afirmes certificaciones, cifrados o controles que no tengas implantados}}</mark></p>
+
+      <h2>8. Cambios en esta política</h2>
+      <p>Esta política puede actualizarse si cambian los servicios utilizados o la normativa aplicable. La fecha de la última actualización figura al principio del documento.</p>
+
+      <div class="rail mt-4">
+        <p class="small"><strong>Nota interna, borrar antes de publicar:</strong> plantilla de partida, no asesoramiento jurídico. Revisa especialmente el apartado 5: cada proveedor que añadas a la web (analítica, chat, calendario de citas, boletín) tiene que aparecer aquí y puede obligar a reactivar el banner de cookies.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap site-foot__inner">
+    <div class="site-foot__cols">
+      <div>
+        <a class="brand" href="/">
+          <svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+            <path d="M8 3c0 6 16 8 16 13S8 23 8 29"/>
+            <path d="M24 3c0 6-16 8-16 13s16 7 16 13"/>
+            <path d="M10.5 9h11M10.5 23h11"/>
+          </svg>
+          Helixora
+        </a>
+        <p class="small mt-3">Integración e interoperabilidad sanitaria.</p>
+      </div>
+      <div>
+        <h2>Web</h2>
+        <ul>
+          <li><a href="/servicios">Servicios</a></li>
+          <li><a href="/sobre-mi">Sobre mí</a></li>
+          <li><a href="/recursos">Recursos</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Legal</h2>
+        <ul>
+          <li><a href="/legal/aviso-legal">Aviso legal</a></li>
+          <li><a href="/legal/privacidad">Política de privacidad</a></li>
+          <li><a href="/legal/cookies">Política de cookies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul>
+          <li><a href="mailto:alex@helixora.es">alex@helixora.es</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-foot__bottom">
+      <span>© 2026 Helixora</span>
+      <span>Esta web no utiliza cookies ni herramientas de analítica.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
