@@ -1,6 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/essential", "destination": "/", "permanent": true },
+    { "source": "/automation", "destination": "/", "permanent": true },
+    { "source": "/advanced", "destination": "/", "permanent": true },
+    { "source": "/personalizado", "destination": "/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
